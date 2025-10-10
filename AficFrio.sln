@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AficFrio.Api", "AficFrio.Api\AficFrio.Api.csproj", "{5FA7D8E6-2CDD-4467-A595-DB71C1FBF75C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AficFrio.Shared", "AficFrio.Shared\AficFrio.Shared.csproj", "{A924AB1B-4814-44F4-9556-EED0C2A8F32F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FA7D8E6-2CDD-4467-A595-DB71C1FBF75C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA7D8E6-2CDD-4467-A595-DB71C1FBF75C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA7D8E6-2CDD-4467-A595-DB71C1FBF75C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA7D8E6-2CDD-4467-A595-DB71C1FBF75C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A924AB1B-4814-44F4-9556-EED0C2A8F32F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A924AB1B-4814-44F4-9556-EED0C2A8F32F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A924AB1B-4814-44F4-9556-EED0C2A8F32F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A924AB1B-4814-44F4-9556-EED0C2A8F32F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC76A2F3-F0B6-49A8-8510-99F4B69E44D5}
+	EndGlobalSection
+EndGlobal

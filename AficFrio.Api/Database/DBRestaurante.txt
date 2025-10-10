@@ -1,0 +1,61 @@
+
+Table Usuario {
+  Id serial [primary key]
+  EmpresaId int [ref: > Empresa.Id]
+  User string
+  Nome string
+  Sobrenome string
+  Email string
+  Senha string 
+  Role enum
+  CadastradoEm datetime
+}
+
+Table UsuarioEndereco {
+  Id serial [primary key]
+  EmpresaId int [ref: > Empresa.Id]
+  UsuarioId int [ref: > Usuario.Id]
+  Nome string
+  Endereco string
+  Numero int
+  CEP string
+  Cidade string
+  Estado string
+  Pais string 
+}
+
+Table Empresa { 
+  Id serial [primary key]
+  RazaoSocial string
+  QRCodeMobile string
+}
+
+Table Produto {
+  Id serial [primary key]
+  EmpresaId int [ref: > Empresa.Id]
+  Nome string
+  Descricao string
+  UrlImagem string
+  Preco decimal
+  ControlaEstoque bool
+  CadastradoEm datetime
+}
+
+Table Pedido {
+  Id serial [primary key]
+  EmpresaId int [ref: > Empresa.Id]
+  Desconto decimal
+  ValorFinal decimal
+  Abertura datetime
+  Encerramento datetime
+  Status enum
+}
+
+Table PedidoProduto {
+  Id serial [primary key]
+  EmpresaId int [ref: > Empresa.Id]
+  ProdutoId int [ref: > Produto.Id]
+  PedidoId int [ref: > Pedido.Id]
+  Valor decimal
+  DataPedido datetime
+}
