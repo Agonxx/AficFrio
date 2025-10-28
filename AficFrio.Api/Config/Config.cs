@@ -10,11 +10,10 @@ namespace AficFrio.Api.Config
     {
         public static IServiceCollection SetupDatabase(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionStringGlobal = configuration.GetConnectionString("ConexaoDBGlobal");
-            var connectionStringRestaurante = configuration.GetConnectionString("ConexaoDBRestaurante");
+            var connectionString = configuration.GetConnectionString("ConexaoBanco");
 
             services.AddDbContext<DBRestaurante>(options =>
-                options.UseSqlServer(connectionStringRestaurante)
+                options.UseSqlServer(connectionString)
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking)
                 .ConfigureWarnings(warnings =>
                     warnings.Ignore(RelationalEventId.PendingModelChangesWarning)));
@@ -24,7 +23,7 @@ namespace AficFrio.Api.Config
 
         public static IServiceCollection SetupRepositories(this IServiceCollection services)
         {
-            services.AddScoped<UsuarioRestRepository, UsuarioRestRepository>();
+            services.AddScoped<UsuarioRepository, UsuarioRepository>();
 
             services.AddScoped<TransactionService>();
 

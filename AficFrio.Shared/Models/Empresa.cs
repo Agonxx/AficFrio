@@ -9,7 +9,7 @@ namespace AficFrio.Shared.Models
         [MaxLength(500)]
         public string Nome { get; set; }
 
-        [MaxLength(500)]
-        public string QRCodeMobile { get; set; }
+        [MaxLength(50)]
+        public string CpfCnpj { get; set; }
     }
 }

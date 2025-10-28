@@ -12,14 +12,14 @@ namespace AficFrio.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UsuarioRestController : CustomController
+    public class UsuarioController : CustomController
     {
-        public readonly UsuarioRestRepository _usuarioRepository;
+        public readonly UsuarioRepository _usuarioRepository;
         private readonly TransactionService _transactionService;
         private readonly IHubContext<HubSignalR> _hubContext;
 
-        public UsuarioRestController(IHttpContextAccessor httpContextAccessor,
-                                        UsuarioRestRepository usuarioRepository,
+        public UsuarioController(IHttpContextAccessor httpContextAccessor,
+                                        UsuarioRepository usuarioRepository,
                                         TransactionService transactionService,
                                         InfoToken infoToken,
                                         IHubContext<HubSignalR> hubContext) : base(httpContextAccessor, infoToken)
@@ -38,7 +38,7 @@ namespace AficFrio.Api.Controllers
             return Ok();
         }
 
-        [HttpGet(UsuarioRestApi.Autenticar)]
+        [HttpGet(UsuarioApi.Autenticar)]
         [AllowAnonymous]
         public async Task<IActionResult> Autenticar([FromQuery] string username, string password)
         {
@@ -46,7 +46,7 @@ namespace AficFrio.Api.Controllers
             return Ok(obj);
         }
 
-        [HttpPost(UsuarioRestApi.Cadastrar)]
+        [HttpPost(UsuarioApi.Cadastrar)]
         [RoleAuthorize(Roles.DevAccess)]
         public async Task<IActionResult> Cadastrar([FromBody] Usuario usuarioObj)
         {
@@ -59,7 +59,7 @@ namespace AficFrio.Api.Controllers
             return Ok(result);
         }
 
-        [HttpGet(UsuarioRestApi.BuscarUsuarios)]
+        [HttpGet(UsuarioApi.BuscarUsuarios)]
         [RoleAuthorize(Roles.AdminAccess)]
         public async Task<IActionResult> BuscarUsuarios()
         {
@@ -67,7 +67,7 @@ namespace AficFrio.Api.Controllers
             return Ok(obj);
         }
 
-        [HttpGet(UsuarioRestApi.CryptografarString)]
+        [HttpGet(UsuarioApi.CryptografarString)]
         [AllowAnonymous]
         public async Task<IActionResult> CryptografarString([FromQuery] string senha)
         {
@@ -75,7 +75,7 @@ namespace AficFrio.Api.Controllers
             return Ok(obj);
         }
 
-        [HttpGet(UsuarioRestApi.DescryptografarString)]
+        [HttpGet(UsuarioApi.DescryptografarString)]
         [AllowAnonymous]
         public async Task<IActionResult> DescryptografarString([FromQuery] string senhaCriptografada)
         {

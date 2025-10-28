@@ -7,13 +7,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AficFrio.Api.Repositories
 {
-    public class UsuarioRestRepository : CustomRepository
+    public class UsuarioRepository : CustomRepository
     {
         public readonly TokenUtils _token;
         public readonly CryptoUtils _cryptoUtils;
         public readonly DBRestaurante _dbRestaurante;
 
-        public UsuarioRestRepository(IHttpContextAccessor httpContextAccessor,
+        public UsuarioRepository(IHttpContextAccessor httpContextAccessor,
                                         TokenUtils tokenUtils,
                                         CryptoUtils cryptoUtils,
                                         DBRestaurante dbRestaurante,
